@@ -2,11 +2,12 @@ import { Home, Search, Notifications, SupervisorAccount, BusinessCenter } from '
 import React from 'react'
 import HeaderOption from './HeaderOption'
 import './Header.css'
+import logo from '../images/background.jpg'
 const Header = () => {
   return (
     <div className='header'>
         <div className='header__left'>
-            <img alt="logo"/>
+            <img src={logo} alt="logo"/>
             <div className='header__search'>
                 <Search/>
                 <input type="text"/>
