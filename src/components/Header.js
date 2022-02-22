@@ -18,7 +18,7 @@ const Header = () => {
             <HeaderOption Icon={SupervisorAccount} title="my network"/>
             <HeaderOption Icon={BusinessCenter} title="jobs"/>
             <HeaderOption Icon={Notifications} title="Notifications"/>
-            <HeaderOption avatar="https://pbs.twimg.com/profile_images/1020939891457241088/fcbu814K_400x400.jpg" title="me"/>
+            <HeaderOption avatar="" title="me"/>
        </div>
        </div>
   )
