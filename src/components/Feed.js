@@ -3,6 +3,7 @@ import {CalendarViewDay, EventNote, Subscriptions, Image, Create} from '@mui/ico
 import InputOption from './InputOption'
 import Post from './Post'
 import './Feed.css'
+import firebase from 'firebase/compat/app'
 import db from '../firebase'
 
 
@@ -11,10 +12,11 @@ const Feed  = () => {
     const [input, setInput] = useState('')
 
     useEffect(() => {
-        db.collection('posts').orderBy('timeStamp', 'desc').
+        db.collection('posts').orderBy('timestamp', 'desc').
         onSnapshot(snapshot => {
         setPosts(snapshot.docs.map(doc => ({
-        id: doc.id, data: doc.data()
+        id: doc.id,
+        data: doc.data()
     })))
     }) 
     }, [])
@@ -26,7 +28,7 @@ const Feed  = () => {
             description: "javascript developer",
             message: input,
             photoUrl:"",
-            timestamp: firebase.firestore.FieldValue.serverTimeStamp()})
+            timestamp: firebase.firestore.FieldValue.serverTimestamp()})
             setInput('')
     }
   return (
@@ -46,6 +48,7 @@ const Feed  = () => {
                 <InputOption Icon={CalendarViewDay} title='Write Article' color='#7C15E'/>
             </div>
         </div>
+        <Post name="denis kidagi" description="javascript developer" message="hello everyone"/>
         {posts.map(({id, data}) => (
             <Post 
                 key={id}
