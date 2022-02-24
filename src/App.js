@@ -3,11 +3,13 @@ import './App.css';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import Feed from './components/Feed';
-// import {useSelector} from 'react-redux'
-// import {selectUser} from './features/userSlice'
+import Login from './components/Login'
+import {useSelector} from 'react-redux'
+import {selectUser} from './features/userSlice'
 
 
 function App() {
+  const user = useSelector(selectUser)
   return (
     <div className="app">
       <Header/>
